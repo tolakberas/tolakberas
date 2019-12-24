@@ -1,0 +1,157 @@
+<!Doctype html>
+<html>
+<head>
+<title>TOLAK BERAS</title>
+<script type="text/javascript">
+
+
+function mulaFungsi(){
+	
+	
+	var nama = document.getElementById("nama").value;
+	var umur = document.getElementById("umur").value / 1;
+	var beras = document.getElementById("berberas").value * 0.25; // nilai dalam gantang 
+	var jantina = document.getElementById("jenis").selectedIndex; //0 utk lelaki, 1 untuk perempuan
+	
+	document.getElementById("namaout").innerHTML = " NAMA : " + nama;
+	
+	if(umur>=64){
+		umur=63;
+	}
+		
+	if(jantina==0){
+	
+	if(umur<=14){
+		umur=15;}
+	
+	//fidyah sembahyang lelaki
+	var total1 = (umur-15)*(37.5/beras);
+	document.getElementById("jawapanout").innerHTML = " Hadiah / Fidyah sembahyang lelaki : <b>" + Math.ceil(total1) + " </b>kali tolak beras" + "<br><br>";
+			
+	//fidyah puasa lelaki
+	var total2 = (umur-15)*(25 / beras);
+	document.getElementById("jawapanout").innerHTML += " Hadiah / Fidyah puasa lelaki : <b>" + Math.ceil(total2) + "</b> kali tolak beras" +  "<br><br>";
+	
+	//Dam dosa diri sembahyang,dam dosa diri puasa,kifarah dosa,kifarah sumpah lelaki
+	var total3 = (umur-15)*(5 / (4*beras));
+	document.getElementById("jawapanout").innerHTML += " Dam dosa diri sembahyang, <br> Dam dosa diri puasa, Kifarah dosa, Kifarah sumpah lelaki <br> : <b>" + Math.ceil(total3) + "</b> kali tolak beras" +  "<br><br>";
+		
+	}
+	
+	else {
+	
+	if(umur<=8){
+		umur=9;}
+	
+	//fidyah sembahyang perempuan
+	var total4 = (umur-9)*(100 / (3*beras));
+	document.getElementById("jawapanout").innerHTML = " Hadiah / Fidyah sembahyang perempuan : <b>" + Math.ceil(total4) + " </b>kali tolak beras" + "<br><br>";
+	
+	//fidyah puasa perempuan
+	var total5 = (umur-9)*(200 / (9*beras));
+	document.getElementById("jawapanout").innerHTML += " Hadiah / Fidyah puasa perempuan : <b>" + Math.ceil(total5) + "</b> kali tolak beras" +  "<br><br>";
+	
+	//Dam dosa diri sembahyang,dam dosa diri puasa,kifarah dosa,kifarah sumpah perempuan
+	var total6 = (umur-9)*(10 / (9*beras));
+	document.getElementById("jawapanout").innerHTML += " Dam dosa diri sembahyang, <br> Dam dosa diri puasa, Kifarah dosa, Kifarah sumpah perempuan <br> : <b>" + Math.ceil(total6) + "</b> kali tolak beras" +  "<br><br>";
+	
+	}
+	
+}
+
+</script>
+
+<style>
+
+body{
+
+color:black;
+font-family:calibri;
+font-size:15px;
+}
+
+p{
+
+color:black;
+font-family:calibri;
+text-align:left;
+font-size:15px;
+}
+
+b{
+color:red;
+}
+
+b.tajuk{
+color:blue;
+}
+
+table {
+padding:5px;
+border: 5px solid black;
+}
+
+tr,td{
+border: 0px;
+}
+
+a{
+font-family:calibri;
+font-size:15px;
+text-decoration: underline;
+color:blue;
+}
+
+a:hover{
+font-family:calibri;
+font-size:15px;
+text-decoration: none;
+color:red;
+}
+
+button{
+height:30px; 
+width:80px;
+}
+
+</style>
+</head>
+<body>
+
+<table border="1" width=auto bgcolor="#C0FFD4"><!--#66FF66#E0F0F8-->
+<tr>
+<td>
+
+<center><h2> TOLAK BERAS </h2>
+<h3> Surau Suluk Ad Diniah <br> Kampung Serting Ulu <br> Negeri Sembilan <br> Darul Khusus</h3></center>
+
+
+<form id="isi1" runat="server">
+
+	Nama : <input type="text" id="nama" value="Nama" size="30"><br><br>
+	
+	Jantina : <select id="jenis">
+		<option value="lelaki">Lelaki</option>
+		<option value="perempuan">Perempuan</option>
+	</select>
+	<br><br>
+	 Umur Ketika Mati/Hidup : <input type="text" id="umur" value=16 size="5"> Tahun<br><br>
+	 Berat Beras : <input type="text" id="berberas" value=5 size="5"> Kg<br>
+	
+</form>
+<br>
+<center><button onclick="mulaFungsi()"> Enter </button></center>
+<br>
+<p id="namaout"></p>
+<P><b class="tajuk">Jumlah tolak beras</b></P>
+<p id="jawapanout"></p>
+<center><a href="rujukan.htm">Rujukan<br></a>
+<a href="index.html">Reset<br></a>
+Version 2.0</center>
+
+</td>
+</tr>
+</table>
+<!--dibuat oleh zahiruddin, Naqiuddin dan keluarga Norzain, May 2015-->
+</body>
+</html>
