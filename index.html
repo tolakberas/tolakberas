@@ -26,15 +26,21 @@ function mulaFungsi(){
 	
 	//fidyah sembahyang lelaki
 	var total1 = (umur-15)*(37.5/beras);
-	document.getElementById("jawapanout").innerHTML = " Hadiah / Fidyah sembahyang lelaki : <b>" + Math.ceil(total1) + " </b>kali tolak beras" + "<br><br>";
+	document.getElementById("jawapanout").innerHTML = " <li>Hadiah / Fidyah sembahyang lelaki : <b>" + Math.ceil(total1) + " </b>kali tolak beras" + "</li><br>";
 			
 	//fidyah puasa lelaki
 	var total2 = (umur-15)*(25 / beras);
-	document.getElementById("jawapanout").innerHTML += " Hadiah / Fidyah puasa lelaki : <b>" + Math.ceil(total2) + "</b> kali tolak beras" +  "<br><br>";
+	document.getElementById("jawapanout").innerHTML += " <li>Hadiah / Fidyah puasa lelaki : <b>" + Math.ceil(total2) + "</b> kali tolak beras" +  "</li><br>";
 	
 	//Dam dosa diri sembahyang,dam dosa diri puasa,kifarah dosa,kifarah sumpah lelaki
 	var total3 = (umur-15)*(5 / (4*beras));
-	document.getElementById("jawapanout").innerHTML += " Dam dosa diri sembahyang, <br> Dam dosa diri puasa, Kifarah dosa, Kifarah sumpah lelaki <br> : <b>" + Math.ceil(total3) + "</b> kali tolak beras" +  "<br><br>";
+	document.getElementById("jawapanout").innerHTML += ` 
+	<li>Kifarah Sembahyang</li>
+	<li>Dam Dosa Diri Sembahyang</li>
+	<li>Kifarah Puasa</li>
+	<li>Dam Dosa Diri  Puasa</li>
+	<li>Kifarah Dosa</li>
+	<li>Kifarah Sumpah</li> : <b>` + Math.ceil(total3) + "</b> kali tolak beras" +  "";
 		
 	}
 	
@@ -45,15 +51,21 @@ function mulaFungsi(){
 	
 	//fidyah sembahyang perempuan
 	var total4 = (umur-9)*(100 / (3*beras));
-	document.getElementById("jawapanout").innerHTML = " Hadiah / Fidyah sembahyang perempuan : <b>" + Math.ceil(total4) + " </b>kali tolak beras" + "<br><br>";
+	document.getElementById("jawapanout").innerHTML = " <li>Hadiah / Fidyah sembahyang perempuan : <b>" + Math.ceil(total4) + " </b>kali tolak beras" + "</li><br>";
 	
 	//fidyah puasa perempuan
 	var total5 = (umur-9)*(200 / (9*beras));
-	document.getElementById("jawapanout").innerHTML += " Hadiah / Fidyah puasa perempuan : <b>" + Math.ceil(total5) + "</b> kali tolak beras" +  "<br><br>";
+	document.getElementById("jawapanout").innerHTML += " <li>Hadiah / Fidyah puasa perempuan : <b>" + Math.ceil(total5) + "</b> kali tolak beras" +  "</li><br>";
 	
 	//Dam dosa diri sembahyang,dam dosa diri puasa,kifarah dosa,kifarah sumpah perempuan
 	var total6 = (umur-9)*(10 / (9*beras));
-	document.getElementById("jawapanout").innerHTML += " Dam dosa diri sembahyang, <br> Dam dosa diri puasa, Kifarah dosa, Kifarah sumpah perempuan <br> : <b>" + Math.ceil(total6) + "</b> kali tolak beras" +  "<br><br>";
+	document.getElementById("jawapanout").innerHTML += ` 
+	<li>Kifarah Sembahyang</li>
+	<li>Dam Dosa Diri Sembahyang</li>
+	<li>Kifarah Puasa</li>
+	<li>Dam Dosa Diri  Puasa</li>
+	<li>Kifarah Dosa</li>
+	<li>Kifarah Sumpah</li> : <b>` + Math.ceil(total6) + "</b> kali tolak beras" +  "";
 	
 	}
 	
@@ -123,7 +135,7 @@ width:80px;
 <td>
 
 <center><h2> TOLAK BERAS </h2>
-<h3> Surau Suluk Ad Diniah <br> Kampung Serting Ulu <br> Negeri Sembilan <br> Darul Khusus</h3></center>
+<h3> Surau Suluk Al - Khalidiyyah <br> Kampung Padang Biawas<br>Serting Ulu <br> Negeri Sembilan</h3></center>
 
 
 <form id="isi1" runat="server">
@@ -144,12 +156,14 @@ width:80px;
 <br>
 <p id="namaout"></p>
 <P><b class="tajuk">Jumlah tolak beras</b></P>
-<p id="jawapanout"></p>
+<ul>
+<span id="jawapanout"></span>
+</ul>
 <center>
 <!--<a href="rujukan.htm">Rujukan<br></a>-->
 <a href="rujukan.html">Rujukan<br></a>
 <a href="index.html">Reset<br></a>
-Version V3.0</center>
+Version V3.1</center>
 
 </td>
 </tr>
